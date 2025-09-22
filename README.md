@@ -33,7 +33,7 @@ The protected page, accessible only after a user has logged in.
 
 App.jsx
 
-The main file that defines the application's routes and implements route protection using RequireAuth.
+The main file that defines the application's routes and implements route protection using the RequireAuth component.
 
 authFetch.js
 
@@ -91,27 +91,12 @@ Utilities: authFetch.js for API calls
 File Structure
 auth-frontend/
 ├─ src/
-│  ├─ pages/
-│  │  ├─ Login.jsx
-│  │  ├─ Register.jsx
-│  │  └─ Dashboard.jsx
-│  ├─ utils/
-│  │  └─ authFetch.js
-│  └─ App.jsx
+│  ├─ pages/
+│  │  ├─ Login.jsx
+│  │  ├─ Register.jsx
+│  │  └─ Dashboard.jsx
+│  ├─ utils/
+│  │  └─ authFetch.js
+│  └─ App.jsx
 ├─ package.json
-├─ tailwind.config.js
-└─ vite.config.js
-
-Contributing
-We welcome contributions! To contribute to this project:
-
-Fork the repository.
-
-Create a new branch for your feature or bug fix.
-
-Commit your changes with clear and descriptive messages.
-
-Submit a pull request for review.
-
-License
-This project is licensed under the MIT License.
+└─ tailwind.config.js
