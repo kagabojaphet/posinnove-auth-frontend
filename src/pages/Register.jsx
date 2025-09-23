@@ -1,4 +1,4 @@
-// frontend/src/pages/Register.jsx
+// auth-frontend/src/pages/Register.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCheck, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
@@ -43,11 +43,14 @@ const Register = () => {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://posinnove-auth-backend.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 

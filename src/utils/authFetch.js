@@ -1,4 +1,4 @@
-// frontend/src/utils/authFetch.js
+// auth-frontend/src/utils/authFetch.js
 
 /**
  * Wrapper to perform authenticated fetch that auto-refreshes access tokens when 401 is returned.
@@ -22,7 +22,7 @@ export async function authFetch(url, options = {}) {
     // if Access token expired -> try refresh once
     if (res.status === 401) {
       // try refresh
-      const refreshRes = await fetch('http://localhost:5000/api/auth/refresh', {
+      const refreshRes = await fetch('https://posinnove-auth-backend.onrender.com/api/auth/refresh', {
         method: 'POST',
         credentials: 'include', // send refresh cookie
       });
