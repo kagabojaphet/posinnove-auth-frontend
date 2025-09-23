@@ -39,7 +39,7 @@ const Login = () => {
     setIsSubmitting(true);
     try {
       const res = await fetch(
-        "https://posinnove-auth-backend.onrender.com/api/auth/login",
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

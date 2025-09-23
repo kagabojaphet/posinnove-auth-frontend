@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCheck, FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import.meta.env.VITE_BACKEND_URL;
 
 const Register = () => {
   const navigate = useNavigate();
@@ -44,10 +45,11 @@ const Register = () => {
     setIsSubmitting(true);
     try {
       const res = await fetch(
-        "https://posinnove-auth-backend.onrender.com/api/auth/register",
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/register`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
+          credentials: "include",
           body: JSON.stringify(formData),
         }
       );

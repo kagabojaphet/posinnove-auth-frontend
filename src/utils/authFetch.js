@@ -21,12 +21,12 @@ export async function authFetch(url, options = {}) {
   
     // if Access token expired -> try refresh once
     if (res.status === 401) {
-      // try refresh
-      const refreshRes = await fetch('https://posinnove-auth-backend.onrender.com/api/auth/refresh', {
-        method: 'POST',
-        credentials: 'include', // send refresh cookie
-      });
-  
+     // try refresh
+    const refreshRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/refresh`, {
+      method: 'POST',
+      credentials: 'include', // send refresh cookie
+     });
+     
       if (!refreshRes.ok) {
         // can't refresh -> redirect to login or throw
         localStorage.removeItem('token');

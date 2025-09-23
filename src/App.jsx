@@ -37,7 +37,7 @@ function RequireAuth({ children }) {
 
       try {
         const res = await fetch(
-          "https://posinnove-auth-backend.onrender.com/api/auth/me",
+          `${import.meta.env.VITE_BACKEND_URL}/api/auth/me`,
           {
             method: "GET",
             headers: {
